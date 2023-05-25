@@ -9,10 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/home")
 public class HomeController {
 
-    @GetMapping("/aplicacao")
+    @GetMapping
     public String aplicacaoRodando(Model model) {
-        model.addAttribute("aplicacaoNome", "MyBooks");
-
         return "home";
     }
 }
