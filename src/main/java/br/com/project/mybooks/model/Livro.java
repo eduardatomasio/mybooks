@@ -10,6 +10,7 @@ public class Livro {
     private String urlImagemLivro;
     private String nomeLivro;
     private String autorLivro;
+    @Column(length = 800)
     private String sinopse;
     @Enumerated(EnumType.STRING)
     private Status statusLeitura;
