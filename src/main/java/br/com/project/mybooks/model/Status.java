@@ -1,7 +1,7 @@
 package br.com.project.mybooks.model;
 
 public enum Status {
-    INICIADO,
+    A_INICIAR,
     EM_ANDAMENTO,
     FINALIZADO
 }

@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <form class="m-5" action="livros/novo" method="POST">
+        <form class="m-5" action="/livros/novo" method="POST">
             <div class="container">
                 <div class="row mb-4">
                     <label for="nomeLivro" >Livro</label>
@@ -30,19 +30,27 @@
                     <small class="text-muted">Digite o nome do livro</small>
                 </div>
                 <div class="row mb-4">
-                    <label for="autorLivro" >Autor(a)</label>
+                    <label>Autor(a)</label>
                     <input id="autorLivro" placeholder="autor(a) do livro">
                     <small class="text-muted">Digite o autor(a) do livro</small>
+                </div>
+                <div class="row mb-4">
+                    <label for="urlLivro" >URL</label>
+                    <input id="urlLivro" placeholder="URL de capa">
+                    <small class="text-muted">Informe a URL da imagem de capa do livro</small>
                 </div>
                 <div class="row mb-4">
                     <label for="sinopse" >Sinopse</label>
                     <textarea id="sinopse" placeholder="sinopse do livro"></textarea>
                     <small class="text-muted">Digite a sinopse do livro</small>
                 </div>
-                <div class="row mb-4">
-                    <label for="urlLivro" >URL</label>
-                    <input id="urlLivro" placeholder="URL de capa">
-                    <small class="text-muted">Informe a URL da imagem de capa do livro</small>
+                <div class="row mb-5">
+                    <select class="form-select" aria-label="status">
+                        <option selected>Informe seu progresso</option>
+                        <option value="1">A iniciar</option>
+                        <option value="2">Em andamento</option>
+                        <option value="3">Finalizado</option>
+                    </select>
                 </div>
                 <div class="row mb-4 col-1">
                     <button class="btn btn-primary" type="submit">Enviar</button>
