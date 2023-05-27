@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
     <head>
         <meta charset="UTF-8">
         <title>Formulário</title>
@@ -21,32 +22,43 @@
                 <span class="lead text-muted">Leitura organizada. Cadastre e gerencie seus livros.</span>
             </div>
         </div>
-
-        <form class="m-5" action="/livros/novo" method="POST">
+        <form th:object="${requisicaoCadastroLivro}" class="m-5" action="/livros/novo" method="POST">
             <div class="container">
-                <div class="row mb-4">
+                <div class="form-group row mb-4">
                     <label for="nomeLivro" >Livro</label>
-                    <input name="nomeLivro" id="nomeLivro" placeholder="nome do livro">
+                    <input th:field="*{nomeLivro}" th:errorclass="is-invalid" class="form-control" name="nomeLivro" id="nomeLivro" placeholder="Nome do livro">
                     <small class="text-muted">Digite o nome do livro</small>
+                    <div class="invalid-feedback" th:errors="*{nomeLivro}">
+                        Erros do campo Livro
+                    </div>
                 </div>
-                <div class="row mb-4">
+                <div class="form-group row mb-4">
                     <label for="autorLivro">Autor(a)</label>
-                    <input name="autorLivro" id="autorLivro"  placeholder="autor(a) do livro">
+                    <input th:field="*{autorLivro}" th:errorclass="is-invalid" class="form-control" name="autorLivro" id="autorLivro"  placeholder="Autor(a) do livro">
                     <small class="text-muted">Digite o autor(a) do livro</small>
+                    <div class="invalid-feedback" th:errors="*{autorLivro}">
+                        Erros do campo Autor(a)
+                    </div>
                 </div>
-                <div class="row mb-4">
+                <div class="form-group row mb-4">
                     <label for="urlLivro" >URL</label>
-                    <input name="urlLivro" id="urlLivro" placeholder="URL de capa">
+                    <input th:field="*{urlLivro}" th:errorclass="is-invalid" class="form-control" name="urlLivro" id="urlLivro" placeholder="URL de capa">
                     <small class="text-muted">Informe a URL da imagem de capa do livro</small>
+                    <div class="invalid-feedback" th:errors="*{urlLivro}">
+                        Erros do campo URL
+                    </div>
                 </div>
-                <div class="row mb-4">
+                <div class="form-group row mb-4">
                     <label for="sinopse" >Sinopse</label>
-                    <textarea name="sinopse" id="sinopse" placeholder="sinopse do livro"></textarea>
+                    <textarea th:field="*{sinopse}" th:errorclass="is-invalid" class="form-control" name="sinopse" id="sinopse" placeholder="Sinopse do livro"></textarea>
                     <small class="text-muted">Digite a sinopse do livro</small>
+                    <div class="invalid-feedback" th:errors="*{sinopse}">
+                        Erros do campo Sinopse
+                    </div>
                 </div>
-                <div class="row mb-5">
+                <div class="form-group row mb-5">
                     <label for="status">Informe seu progresso</label>
-                    <input name="status" id="status" placeholder="ex: A_INICIAR, EM_ANDAMENTO, FINALIZADO">
+                    <input th:field="*{status}" class="form-control" name="status" id="status" placeholder="Ex: A iniciar, Em andamento, Finalizado">
                 </div>
                 <div class="row mb-4 col-1">
                     <button class="btn btn-primary" type="submit">Enviar</button>
