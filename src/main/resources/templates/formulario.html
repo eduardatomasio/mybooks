@@ -22,6 +22,11 @@
                 <span class="lead text-muted">Leitura organizada. Cadastre e gerencie seus livros.</span>
             </div>
         </div>
+
+        <div class="container mt-4" style="text-align: right">
+            <a class="btn btn-outline-primary" href="/home" role="button">Home</a>
+        </div>
+
         <form th:object="${requisicaoCadastroLivro}" class="m-5" action="/livros/novo" method="POST">
             <div class="container">
                 <div class="form-group row mb-4">
