@@ -1,10 +1,7 @@
 package br.com.project.mybooks.dto;
 
 import br.com.project.mybooks.model.Livro;
-import br.com.project.mybooks.model.Status;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
-import org.springframework.beans.factory.annotation.Value;
 
 public class RequisicaoCadastroLivro {
 
@@ -20,7 +17,7 @@ public class RequisicaoCadastroLivro {
     @NotBlank
     private String sinopse;
 
-
+    @NotBlank
     private String status;
 
     public String getNomeLivro() {
@@ -69,12 +66,12 @@ public class RequisicaoCadastroLivro {
         livro.setAutorLivro(autorLivro);
         livro.setUrlImagemLivro(urlLivro);
         livro.setSinopse(sinopse);
-        if(status.equalsIgnoreCase("finalizado")){
-            livro.setStatusLeitura(Status.FINALIZADO);
-        }else if(status.equalsIgnoreCase("em andamento")){
-            livro.setStatusLeitura(Status.EM_ANDAMENTO);
-        }else if(status.equalsIgnoreCase("a iniciar")){
-            livro.setStatusLeitura(Status.A_INICIAR);
+        if(status.equals("aIniciar")){
+            livro.setStatusLeitura("A iniciar");
+        } else if(status.equals("emAndamento")) {
+            livro.setStatusLeitura("Em andamento");
+        }else if(status.equals("finalizado")){
+            livro.setStatusLeitura("Finalizado");
         }
         return livro;
     }

@@ -14,7 +14,7 @@
                 font-size: 2.5rem;
             }
             .jumbotron{
-                background:lightsteelblue;
+                background:lightgrey;
             }
 
         </style>
@@ -35,10 +35,10 @@
         <div class="container mb-5">
             <div th:each="livro : ${livros}">
                 <div class="card mt-3">
-                    <th:block th:switch="${livro.statusLeitura.name()}">
-                        <div th:case="'A_INICIAR'" class="card-header text-center alert alert-primary "><span> A iniciar </span></div>
-                        <div th:case="'EM_ANDAMENTO'" class="card-header text-center alert alert-warning "><span > Em andamento </span></div>
-                        <div th:case="'FINALIZADO'" class="card-header text-center alert alert-success "><span > Finalizado </span></div>
+                    <th:block th:switch="${livro.statusLeitura}">
+                        <div th:case="'A iniciar'" class="card-header text-center alert alert-primary "><span> A iniciar </span></div>
+                        <div th:case="'Em andamento'" class="card-header text-center alert alert-warning "><span > Em andamento </span></div>
+                        <div th:case="'Finalizado'" class="card-header text-center alert alert-success "><span > Finalizado </span></div>
                     </th:block>
 
                     <div class="card-body d-flex justify-content-around">

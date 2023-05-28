@@ -17,13 +17,12 @@ public class Livro {
     @Column(length = 800)
     private String sinopse;
 
-    @Enumerated(EnumType.STRING)
-    private Status statusLeitura;
+    private String statusLeitura;
 
     public Livro() {
     }
 
-    public Livro(Long id, String urlImagemLivro, String nomeLivro, String autorLivro, String sinopse, Status statusLeitura) {
+    public Livro(Long id, String urlImagemLivro, String nomeLivro, String autorLivro, String sinopse, String statusLeitura) {
         this.urlImagemLivro = urlImagemLivro;
         this.id = id;
         this.nomeLivro = nomeLivro;
@@ -72,11 +71,11 @@ public class Livro {
         this.sinopse = sinopse;
     }
 
-    public Status getStatusLeitura() {
+    public String getStatusLeitura() {
         return statusLeitura;
     }
 
-    public void setStatusLeitura(Status statusLeitura) {
+    public void setStatusLeitura(String statusLeitura) {
         this.statusLeitura = statusLeitura;
     }
 }

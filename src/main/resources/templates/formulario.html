@@ -11,7 +11,7 @@
                 font-size: 2.5rem;
             }
             .jumbotron{
-                background:lightsteelblue;
+                background:lightgrey;
             }
         </style>
     </head>
@@ -62,8 +62,12 @@
                     </div>
                 </div>
                 <div class="form-group row mb-5">
-                    <label for="status">Informe seu progresso</label>
-                    <input th:field="*{status}" class="form-control" name="status" id="status" placeholder="Ex: A iniciar, Em andamento, Finalizado">
+                    <label class="mb-1" for="status"> Informe seu progresso marcando uma das opções abaixo</label>
+                    <select class="form-select" th:field="*{status}" aria-label="status" id="status">
+                        <option value="aIniciar">A iniciar</option>
+                        <option value="emAndamento">Em andamento</option>
+                        <option value="finalizado">Finalizado</option>
+                    </select>
                 </div>
                 <div class="row mb-4 col-1">
                     <button class="btn btn-primary" type="submit">Enviar</button>
