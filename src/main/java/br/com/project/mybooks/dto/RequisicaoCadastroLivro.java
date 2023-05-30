@@ -60,7 +60,7 @@ public class RequisicaoCadastroLivro {
         this.status = status;
     }
 
-    public Livro toPedido() {
+    public Livro toLivro() {
         Livro livro = new Livro();
         livro.setNomeLivro(nomeLivro);
         livro.setAutorLivro(autorLivro);
@@ -75,4 +75,5 @@ public class RequisicaoCadastroLivro {
         }
         return livro;
     }
+
 }

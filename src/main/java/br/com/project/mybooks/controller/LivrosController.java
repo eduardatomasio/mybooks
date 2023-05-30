@@ -29,7 +29,7 @@ public class LivrosController {
         if(result.hasErrors()){
             return "formulario";
         }
-        Livro livro = requisicao.toPedido();
+        Livro livro = requisicao.toLivro();
         repository.save(livro);
 
         return "redirect:/home";
