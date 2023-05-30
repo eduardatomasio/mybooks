@@ -36,9 +36,9 @@
             <div th:each="livro : ${livros}">
                 <div class="card mt-3">
                     <th:block th:switch="${livro.statusLeitura}">
-                        <div th:case="'A iniciar'" class="card-header text-center alert alert-primary "><span> A iniciar </span></div>
-                        <div th:case="'Em andamento'" class="card-header text-center alert alert-warning "><span > Em andamento </span></div>
-                        <div th:case="'Finalizado'" class="card-header text-center alert alert-success "><span > Finalizado </span></div>
+                        <div th:case="'aIniciar'" class="card-header text-center alert alert-primary "><span> A iniciar </span></div>
+                        <div th:case="'emAndamento'" class="card-header text-center alert alert-warning "><span > Em andamento </span></div>
+                        <div th:case="'finalizado'" class="card-header text-center alert alert-success "><span > Finalizado </span></div>
                     </th:block>
 
                     <div class="card-body d-flex justify-content-around">

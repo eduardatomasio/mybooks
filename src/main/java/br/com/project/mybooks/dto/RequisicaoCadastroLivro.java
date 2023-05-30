@@ -17,7 +17,6 @@ public class RequisicaoCadastroLivro {
     @NotBlank
     private String sinopse;
 
-    @NotBlank
     private String status;
 
     public String getNomeLivro() {
@@ -66,13 +65,14 @@ public class RequisicaoCadastroLivro {
         livro.setAutorLivro(autorLivro);
         livro.setUrlImagemLivro(urlLivro);
         livro.setSinopse(sinopse);
-        if(status.equals("aIniciar")){
-            livro.setStatusLeitura("A iniciar");
-        } else if(status.equals("emAndamento")) {
-            livro.setStatusLeitura("Em andamento");
-        }else if(status.equals("finalizado")){
-            livro.setStatusLeitura("Finalizado");
-        }
+        livro.setStatusLeitura(status);
+//        if(status.equals("aIniciar")){
+//            livro.setStatusLeitura("A iniciar");
+//        } else if(status.equals("emAndamento")) {
+//            livro.setStatusLeitura("Em andamento");
+//        }else if(status.equals("finalizado")){
+//            livro.setStatusLeitura("Finalizado");
+//        }
         return livro;
     }
 
