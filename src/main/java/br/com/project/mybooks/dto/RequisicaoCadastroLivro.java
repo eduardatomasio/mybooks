@@ -66,13 +66,7 @@ public class RequisicaoCadastroLivro {
         livro.setUrlImagemLivro(urlLivro);
         livro.setSinopse(sinopse);
         livro.setStatusLeitura(status);
-//        if(status.equals("aIniciar")){
-//            livro.setStatusLeitura("A iniciar");
-//        } else if(status.equals("emAndamento")) {
-//            livro.setStatusLeitura("Em andamento");
-//        }else if(status.equals("finalizado")){
-//            livro.setStatusLeitura("Finalizado");
-//        }
+
         return livro;
     }
 

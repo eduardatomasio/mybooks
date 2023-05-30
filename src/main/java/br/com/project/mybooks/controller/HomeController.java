@@ -14,14 +14,17 @@ import java.util.List;
 @RequestMapping("/home")
 public class HomeController {
 
-    @Autowired
     private LivroRepository repository;
+
+    @Autowired
+    public HomeController(LivroRepository repository) {
+        this.repository = repository;
+    }
 
     @GetMapping
     public String home(Model model) {
         List<Livro> livros = repository.findAll();
         model.addAttribute("livros", livros);
-
         return "home";
     }
 }

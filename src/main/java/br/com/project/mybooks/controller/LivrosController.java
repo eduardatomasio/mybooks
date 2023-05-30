@@ -16,8 +16,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/livros")
 public class LivrosController {
 
-    @Autowired
     private LivroRepository repository;
+
+    @Autowired
+    public LivrosController(LivroRepository repository) {
+        this.repository = repository;
+    }
+
+    public LivrosController() {
+    }
 
     @GetMapping("/cadastro")
     public String formulario(RequisicaoCadastroLivro requisicao) {
@@ -29,6 +36,7 @@ public class LivrosController {
         if(result.hasErrors()){
             return "formulario";
         }
+
         Livro livro = requisicao.toLivro();
         repository.save(livro);
 
